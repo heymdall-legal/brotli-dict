@@ -1,0 +1,11 @@
+.idea
+node_modules/
+.DS_Store
+*.o
+bin
+
+# bazel
+bazel-bin
+bazel-brotli-dict
+bazel-out
+bazel-testlogs

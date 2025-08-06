@@ -1,0 +1,26 @@
+{
+    "name": "brotli-dict",
+    "version": "1.0.0",
+    "scripts": {
+        "build:compress": "bazelisk build //brotli_dict_wasm:compress && cp -f bazel-bin/brotli_dict_wasm/compress/compress.js ./bin && cp -f bazel-bin/brotli_dict_wasm/compress/compress.wasm ./bin",
+        "build:generate": "bazelisk build //brotli_dict_wasm:generate && cp -f bazel-bin/brotli_dict_wasm/generate/generate.js ./bin && cp -f bazel-bin/brotli_dict_wasm/generate/generate.wasm ./bin",
+        "build:cpp": "yarn build:compress && yarn build:generate"
+    },
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/heymdall-legal/brotli-dict"
+    },
+    "license": "MIT",
+    "author": "Aleksandr Kitov <kitov.nn@gmail.com>",
+    "files": [
+        "bin",
+        "lib"
+    ],
+    "keywords": [
+        "compress",
+        "brotli",
+        "dictionary"
+    ]
+}
