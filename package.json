@@ -1,7 +1,7 @@
 {
     "name": "brotli-dict",
     "packageManager": "yarn@4.9.2",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "scripts": {
         "build:compress": "bazelisk build //brotli_dict_wasm:compress && cp -f bazel-bin/brotli_dict_wasm/compress/compress.js ./bin && cp -f bazel-bin/brotli_dict_wasm/compress/compress.wasm ./bin",
         "build:generate": "bazelisk build //brotli_dict_wasm:generate && cp -f bazel-bin/brotli_dict_wasm/generate/generate.js ./bin && cp -f bazel-bin/brotli_dict_wasm/generate/generate.wasm ./bin",
