@@ -1,5 +1,6 @@
 {
     "name": "brotli-dict",
+    "packageManager": "yarn@4.9.2",
     "version": "1.0.0",
     "scripts": {
         "build:compress": "bazelisk build //brotli_dict_wasm:compress && cp -f bazel-bin/brotli_dict_wasm/compress/compress.js ./bin && cp -f bazel-bin/brotli_dict_wasm/compress/compress.wasm ./bin",
@@ -7,6 +8,7 @@
         "build:cpp": "yarn build:compress && yarn build:generate",
         "test": "node --test"
     },
+    "bin": "./lib/bin.js",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
     "repository": {
@@ -23,5 +25,8 @@
         "compress",
         "brotli",
         "dictionary"
-    ]
+    ],
+    "dependencies": {
+        "command-line-args": "^6.0.1"
+    }
 }

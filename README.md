@@ -73,7 +73,46 @@ Create a custom Brotli dictionary from provided data buffers.
 
 **Returns:** `Promise<Uint8Array>` - Generated dictionary
 
+## CLI Usage
 
+This package also provides a command-line interface for both compression and dictionary generation.
+
+### Compress Command
+
+```bash
+npx brotli-dict compress input.txt -o output.br [-d dictionary.dict] [-q 6] [--mode 1] [--lgwin 22]
+```
+
+**Options:**
+- `input` - Input file to compress (required)
+- `-o, --output` - Output file path (required)
+- `-d, --dictionary` - Dictionary file to use for compression (optional)
+- `-q, --quality` - Compression quality level 0-11 (optional)
+- `--mode` - Compression mode: 0=generic, 1=text, 2=font (optional)
+- `--lgwin` - LZ77 window size (optional)
+
+**Example:**
+```bash
+npx brotli-dict compress example.txt -o example.txt.br -d my-dict.dict -q 9
+```
+
+### Generate Dictionary Command
+
+```bash
+npx brotli-dict generate file1.txt file2.txt file3.txt -o dictionary.dict [-s 8192] [--sliceLength 16] [--blockLength 64]
+```
+
+**Options:**
+- `input files` - Multiple input files to generate dictionary from (required)
+- `-o, --output` - Output dictionary file path (required)
+- `-s, --sizeLimit` - Maximum dictionary size in bytes (optional)
+- `--sliceLength` - Length of text slices to analyze (optional)
+- `--blockLength` - Block size for dictionary generation (optional)
+
+**Example:**
+```bash
+npx brotli-dict generate *.html -o web-dict.dict -s 4096
+```
 
 ## Building
 

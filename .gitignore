@@ -9,3 +9,11 @@ bazel-bin
 bazel-brotli-dict
 bazel-out
 bazel-testlogs
+
+# yarn
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+.pnp.*
