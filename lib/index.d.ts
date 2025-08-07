@@ -26,8 +26,8 @@ export function compress(buffer: Uint8Array, options?: CompressOptions): Promise
 
 type GenerateDictionaryOptions = {
     dictionarySizeLimit: number;
-    sliceLength: number;
-    blockLength: number;
+    sliceLength?: number;
+    blockLength?: number;
     data: Uint8Array[];
 };
 

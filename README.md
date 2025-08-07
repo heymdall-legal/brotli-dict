@@ -31,8 +31,6 @@ compress(data, { dictionary }).then(compressed => {
 // Generate a dictionary from multiple buffers
 const options = {
     dictionarySizeLimit: 1024,
-    sliceLength: 16,
-    blockLength: 64,
     data: [
         new Uint8Array(Buffer.from('sample text 1')),
         new Uint8Array(Buffer.from('sample text 2'))
@@ -67,9 +65,9 @@ Create a custom Brotli dictionary from provided data buffers.
 **Parameters:**
 - `options` (GenerateDictionaryOptions):
   - `dictionarySizeLimit` (number): Maximum dictionary size in bytes
-  - `sliceLength` (number): Length of text slices to analyze
-  - `blockLength` (number): Block size for dictionary generation
   - `data` (Uint8Array[]): Array of data buffers to create dictionary from
+  - `sliceLength` (number, optional): Length of text slices to analyze
+  - `blockLength` (number, optional): Block size for dictionary generation
 
 **Returns:** `Promise<Uint8Array>` - Generated dictionary
 
