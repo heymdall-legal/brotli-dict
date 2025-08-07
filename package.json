@@ -4,7 +4,8 @@
     "scripts": {
         "build:compress": "bazelisk build //brotli_dict_wasm:compress && cp -f bazel-bin/brotli_dict_wasm/compress/compress.js ./bin && cp -f bazel-bin/brotli_dict_wasm/compress/compress.wasm ./bin",
         "build:generate": "bazelisk build //brotli_dict_wasm:generate && cp -f bazel-bin/brotli_dict_wasm/generate/generate.js ./bin && cp -f bazel-bin/brotli_dict_wasm/generate/generate.wasm ./bin",
-        "build:cpp": "yarn build:compress && yarn build:generate"
+        "build:cpp": "yarn build:compress && yarn build:generate",
+        "test": "node --test"
     },
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
