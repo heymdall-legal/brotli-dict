@@ -2,7 +2,7 @@ type CompressOptions = {
     /**
      * Used as raw (LZ77) dictionary; same dictionary MUST be used both for compression and decompression
      */
-    dictionary?: Uint8Array;
+    dictionary?: Buffer | string;
     /**
      * LZ77 window size
      */
@@ -22,7 +22,7 @@ type CompressOptions = {
  * @param buffer data to compress
  * @param options compression settings
  */
-export function compress(buffer: Uint8Array, options?: CompressOptions): Promise<Uint8Array>;
+export function compress(buffer: Buffer, options?: CompressOptions): Promise<Uint8Array>;
 
 type GenerateDictionaryOptions = {
     dictionarySizeLimit: number;
